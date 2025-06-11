@@ -21,7 +21,7 @@ app.use(cookieParser());
 // app.use("/api", router);
 
 app.get("/", (req, res) => {
-  res.send("Hey there! Welcome to E-Commerce platform.");
+  res.send("Hey there!");
 });
 
 //* this is global error handling......
