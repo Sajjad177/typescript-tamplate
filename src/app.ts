@@ -1,9 +1,8 @@
 import express, { Application, RequestHandler } from "express";
 import cors from "cors";
-// import globalErrorHandler from "./middleware/globalErrorHandler";
-// import notFound from "./middleware/notFound";
-// import router from "./router";
 import cookieParser from "cookie-parser";
+import globalErrorHandler from "./middleware/globalErrorHandler";
+import notFound from "./middleware/notFound";
 
 const app: Application = express();
 
@@ -25,7 +24,7 @@ app.get("/", (req, res) => {
 });
 
 //* this is global error handling......
-// app.use(globalErrorHandler as unknown as RequestHandler);
-// app.use(notFound as unknown as RequestHandler);
+app.use(globalErrorHandler as unknown as RequestHandler);
+app.use(notFound as unknown as RequestHandler);
 
 export default app;
